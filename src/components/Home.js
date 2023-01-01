@@ -4,6 +4,7 @@ import { AuthContext } from './Auth'
 import navbars from './Navbars'
 import './tailwind.css';
 
+
 const Home = () => {
     const { currentUser } = useContext(AuthContext);
 
@@ -30,8 +31,10 @@ const Home = () => {
 
     return (
         <>
-            <div className="container mt-5">
+            <div>
                 {navbars}
+            </div>
+            <div className="container mt-5">
                 <h1>Home</h1>
                 {currentUser ? (
                     <p>You are logged in - <Link to="/dashboard">View Dashboard</Link></p>
@@ -42,7 +45,7 @@ const Home = () => {
                 )}
             </div>
 
-            {/* <div>
+            <div>
                 <ul className="divide-y divide-gray-200">
                     {people.map((person) => (
                         <li key={person.email} className="py-4 flex">
@@ -54,7 +57,7 @@ const Home = () => {
                         </li>
                     ))}
                 </ul>
-            </div> */}
+            </div>
         </>
     )
 }
