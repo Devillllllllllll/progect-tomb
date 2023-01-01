@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from './Auth'
 import navbars from './Navbars'
+import './tailwind.css';
 
 const Home = () => {
     const { currentUser } = useContext(AuthContext);
@@ -29,7 +30,6 @@ const Home = () => {
 
     return (
         <>
-
             <div className="container mt-5">
                 {navbars}
                 <h1>Home</h1>
@@ -42,7 +42,7 @@ const Home = () => {
                 )}
             </div>
 
-            <div>
+            {/* <div>
                 <ul className="divide-y divide-gray-200">
                     {people.map((person) => (
                         <li key={person.email} className="py-4 flex">
@@ -54,7 +54,7 @@ const Home = () => {
                         </li>
                     ))}
                 </ul>
-            </div>
+            </div> */}
         </>
     )
 }
