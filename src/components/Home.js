@@ -1,12 +1,16 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from './Auth'
+import navbars from './Navbars'
 
 const Home = () => {
     const { currentUser } = useContext(AuthContext);
 
     return (
         <>
+            <div>
+                {navbars}
+            </div>
             <div className="container mt-5">
                 <h1>Home</h1>
                 {currentUser ? (
