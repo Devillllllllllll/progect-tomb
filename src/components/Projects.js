@@ -7,7 +7,7 @@ import Navbars from './Navbars'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
-const DashBoard = () => {
+const Projects = () => {
     const { currentUser } = useContext(AuthContext);
 
     if (!currentUser) {
@@ -18,10 +18,10 @@ const DashBoard = () => {
 
         <>
             {/* Navbars */}
-            <AuthProvider><Router><Switch><Route path="/dashboard" exact><Navbars/></Route></Switch></Router></AuthProvider>
+            <AuthProvider><Router><Switch><Route path="/projects" exact><Navbars/></Route></Switch></Router></AuthProvider>
 
             <div className="container mt-5">
-                <h1>Welcome</h1>
+                <h1>Welcome Projects !!!</h1>
                 <p>This is the dashboard, if you can see this you're logged in.</p>
                 <button onClick={() => firebaseConfig.auth().signOut()} class="btn btn-danger">Sign Out</button>
             </div>
@@ -32,4 +32,4 @@ const DashBoard = () => {
     )
 }
 
-export default DashBoard;
+export default Projects;
