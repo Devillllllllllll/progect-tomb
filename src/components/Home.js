@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from './Auth'
 import Navbars from './Navbars'
 import './tailwind.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 const Home = () => {
@@ -31,10 +32,6 @@ const Home = () => {
 
     return (
         <>
-            <div>
-                {Navbars}
-            </div>
-
             <div className="container mt-5">
                 <h2 class="mb-12 text-center text-5xl font-extrabold">Home Tomb ฌาปนสถาน ธม.</h2>
                 {currentUser ? (
