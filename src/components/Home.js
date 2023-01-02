@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from './Auth'
-import navbars from './Navbars'
+import Navbars from './Navbars'
 import './tailwind.css';
 
 
@@ -32,15 +32,19 @@ const Home = () => {
     return (
         <>
             <div>
-                {navbars}
+                {Navbars}
             </div>
+
             <div className="container mt-5">
-                <h1>Home</h1>
+                <h2 class="mb-12 text-center text-5xl font-extrabold">Home Tomb ฌาปนสถาน ธม.</h2>
                 {currentUser ? (
                     <p>You are logged in - <Link to="/dashboard">View Dashboard</Link></p>
                 ) : (
                     <p>
-                        <Link to="/login" className="btn btn-primary">Log In</Link> or <Link to="/signup" className="btn btn-success">Sign Up</Link>
+                        <Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Log In</Link> or 
+                        <Link to="/signup" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                            Sign Up</Link>
                     </p>
                 )}
             </div>
