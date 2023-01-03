@@ -16,13 +16,13 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/navbars" component={Navbars} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/team" component={Team} />
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/calendar" component={Calendar} />
-          <Route exact path="/navbars" component={Navbars} />
         </Switch>
       </Router>
     </AuthProvider>

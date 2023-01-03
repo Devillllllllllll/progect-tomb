@@ -1,16 +1,11 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-// import Home from './Home'
-// import Dashboard from './Dashboard'
-// import LogIn from './LogIn'
-// import SignUp from './SignUp'
-// import Team from './Team'
-// import Projects from './Projects'
-// import Calendar from './Calendar'
+import React, { useContext } from 'react'
+import './tailwind.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { AuthContext, AuthProvider } from './Auth'
-import React, { useContext } from 'react'
 import firebaseConfig from '../config'
 import LogIn from './LogIn'
 
@@ -85,22 +80,12 @@ function classNames(...classes) {
                     
                 ) : (
                   // <button onClick={() => firebaseConfig.auth().logIn()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign In</button>
-                  <button><Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Log In</Link></button>
-                            
+                  // <button onClick={() => firebaseConfig.auth().signIn()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign In</button>
+                  <Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Log In</Link>          
                 )}
-
                 
-                {/* {currentUser ? (
-                    <p>You are logged in - <Link to="/dashboard">View Dashboard</Link></p>
-                ) : (
-                    <p>
-                        <Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Log In</Link> or 
-                        <Link to="/signup" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                            Sign Up</Link>
-                    </p>
-                )} */}
+
             
                 
               </div>
