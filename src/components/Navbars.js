@@ -12,13 +12,14 @@ import { Link } from 'react-router-dom'
 import { AuthContext, AuthProvider } from './Auth'
 import React, { useContext } from 'react'
 import firebaseConfig from '../config'
+import LogIn from './LogIn'
 
 
 const navigation = [
-  { name: 'Dashboard', href: 'dashboard', current: true },
-  { name: 'Team', href: 'team', current: false },
-  { name: 'Projects', href: 'projects', current: false },
-  { name: 'Calendar', href: 'calendar', current: false },
+  { name: 'Dashboard', href: 'dashboard', currentNav: true },
+  { name: 'Team', href: 'team', currentNav: false },
+  { name: 'Projects', href: 'projects', currentNav: false },
+  { name: 'Calendar', href: 'calendar', currentNav: false }
 ]
 
 
@@ -32,7 +33,7 @@ function classNames(...classes) {
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-14 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -65,10 +66,10 @@ function classNames(...classes) {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          item.currentNav ? 'no-underline bg-gray-900 text-white' : 'no-underline text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={item.currentNav ? 'page' : undefined}
                       >
                         {item.name}
                       </a>
@@ -77,17 +78,30 @@ function classNames(...classes) {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              
               {currentUser ? (
                     
-                        <button onClick={() => firebaseConfig.auth().signOut()} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Sign Out</button>
+                  <button onClick={() => firebaseConfig.auth().signOut()} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Sign Out</button>
                     
                 ) : (
-                  
-                  <p><Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  <button onClick={() => firebaseConfig.auth().Home()} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Sign In</button>
-                    Sign In</Link></p>
+                  // <button onClick={() => firebaseConfig.auth().logIn()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign In</button>
+                  <button><Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Log In</Link></button>
+                            
                 )}
 
+                
+                {/* {currentUser ? (
+                    <p>You are logged in - <Link to="/dashboard">View Dashboard</Link></p>
+                ) : (
+                    <p>
+                        <Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Log In</Link> or 
+                        <Link to="/signup" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                            Sign Up</Link>
+                    </p>
+                )} */}
+            
                 
               </div>
             </div>
@@ -101,10 +115,10 @@ function classNames(...classes) {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.currentNav ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item.currentNav ? 'page' : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>
