@@ -11,10 +11,9 @@ import LogIn from './LogIn'
 
 
 const navigation = [
-  { name: 'Dashboard', href: 'dashboard', currentNav: true },
-  { name: 'Team', href: 'team', currentNav: false },
-  { name: 'Projects', href: 'projects', currentNav: false },
-  { name: 'Calendar', href: 'calendar', currentNav: false }
+  { name: 'จัดการข้อมูล', href: 'dashboard', currentNav: true },
+  { name: 'เพิ่มข้อมูล', href: 'inputdata', currentNav: false },
+  { name: 'แก้ไขข้อมูล', href: 'editdata', currentNav: false },
 ]
 
 
@@ -42,17 +41,20 @@ function classNames(...classes) {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
+                <a href="/" className="-m-1.5 p-1.5">
                   <img
                     className="block h-9 w-auto lg:hidden"
                     src="https://cdn-icons-png.flaticon.com/512/5783/5783177.png"
                     alt="Your Company"
                   />
+                </a>
+                <a href="/" className="-m-1.5 p-1.5">
                   <img
                     className="hidden h-9 w-auto lg:block"
                     src="https://cdn-icons-png.flaticon.com/512/5783/5783177.png"
                     alt="Your Company"
                   />
-                  
+                </a>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -81,10 +83,9 @@ function classNames(...classes) {
                 ) : (
                   // <button onClick={() => firebaseConfig.auth().logIn()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign In</button>
                   // <button onClick={() => firebaseConfig.auth().signIn()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign In</button>
-                  <Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Log In</Link>          
+                  <p><Link to="LogIn" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Log In</Link></p>         
                 )}
-                
 
             
                 
