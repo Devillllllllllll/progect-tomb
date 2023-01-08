@@ -5,10 +5,12 @@ import './tailwind.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { AuthProvider } from './Auth'
 
+
 /* This example requires Tailwind CSS v3.0+ */
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Footer from './Footer';
 
 
 
@@ -25,7 +27,7 @@ const Home = () => {
         <>
             {/* Navbars */}
             <div className="isolate bg-white">
-                {/* <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
+                <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
                     <svg
                     className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
                     viewBox="0 0 1155 678"
@@ -51,12 +53,12 @@ const Home = () => {
                         </linearGradient>
                     </defs>
                     </svg>
-                </div> */}
+                </div>
                 <div className="px-6 pt-6 lg:px-8">
                     <div>
                     <nav className="flex h-9 items-center justify-between" aria-label="Global">
                         <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <a href="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
                             <img className="h-12" src="https://cdn-icons-png.flaticon.com/512/5783/5783177.png" alt="" />
                         </a>
@@ -114,13 +116,14 @@ const Home = () => {
                 </div>
                 <main>
                     <div className="relative px-6 lg:px-8">
-                    <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
-                            
-                        <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-                                <span className="sr-only">Your Company</span>
-                                <img className="bg-auto bg-no-repeat bg-center bg-contain bg-center" src="https://cdn-icons-png.flaticon.com/512/5783/5783177.png" alt="" />
-                        </div>
+                    <div className="items-center mx-auto max-w-3xl pt-20 pb-32 sm:pt-16 sm:pb-40">
                         <div>
+                    <div className="mx-auto block h-1/3 w-1/3 object-cover">
+                        <div
+                            className="mx-auto">
+                            <img className="object-fill" src="images/tmlogo.png" alt="images"/>
+                        </div>
+                    </div><br></br>
                             <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
                             ฌาปนสถานวัดสะพานสูง
                             </h1>
@@ -148,13 +151,13 @@ const Home = () => {
                             </a>
                             </div>
                         </div>
-
-                        
                     </div>
                     </div>
                 </main>
             </div>
 
+            {/* footer */}
+            <Footer />
 
 
         </>
