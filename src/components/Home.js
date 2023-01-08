@@ -27,7 +27,7 @@ const Home = () => {
         <>
             {/* Navbars */}
             <div className="isolate bg-white">
-                <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
+                {/* <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
                     <svg
                     className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
                     viewBox="0 0 1155 678"
@@ -53,7 +53,7 @@ const Home = () => {
                         </linearGradient>
                     </defs>
                     </svg>
-                </div>
+                </div> */}
                 <div className="px-6 pt-6 lg:px-8">
                     <div>
                     <nav className="flex h-9 items-center justify-between" aria-label="Global">
@@ -114,16 +114,23 @@ const Home = () => {
                     </Dialog>
                     </div>
                 </div>
+                
+                
+                
                 <main>
                     <div className="relative px-6 lg:px-8">
-                    <div className="items-center mx-auto max-w-3xl pt-20 pb-32 sm:pt-16 sm:pb-40">
-                        <div>
-                    <div className="mx-auto block h-1/3 w-1/3 object-cover">
+                    <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-12 sm:pb-40">
+
+                    <div className="mx-auto block h-2/5 w-2/5 object-cover">
                         <div
                             className="mx-auto">
                             <img className="object-fill" src="images/tmlogo.png" alt="images"/>
                         </div>
                     </div><br></br>
+
+
+
+                        <div>
                             <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
                             ฌาปนสถานวัดสะพานสูง
                             </h1>
@@ -155,9 +162,7 @@ const Home = () => {
                     </div>
                 </main>
             </div>
-
-            {/* footer */}
-            <Footer />
+            <Footer/>
 
 
         </>
